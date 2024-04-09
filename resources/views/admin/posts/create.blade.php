@@ -1,16 +1,13 @@
-
-
 @extends('layouts.master')
-@section('title','Category View')
+@section('title','Add Posts')
 
 @section('content')
-
 
 
 <div class="container- fluid px-4">
     <div class="card mt-4">
             <div class="card-header">
-                <h4 class="">Update Category</h4>
+                <h4 class="">Add Posts</h4>
             </div>
     </div>
     <div class="card-body">
@@ -21,9 +18,8 @@
                     @endforeach
                 </div>
         @endif
-        <form action="{{url('admin/update_category/'.$category->id)}}" method="POST" enctype="multipart/form-data">
+        <form action="{{url('admin/add_posts')}}" method="post" enctype="multipart/form-data">
             @csrf
-            @method('PUT')
             <div class="row mt-4 mb-4">
                 <div class="col-md-6">
                     <label for="category_id">Select Category</label>
@@ -34,52 +30,49 @@
                         @endforeach
                     </select>
                 </div>
+                
+            </div>
             <div class="row mt-4 mb-4">
                 <div class="col-md-6">
                     <label for="">Post Name</label>
-                    <input type="text" name="name" value="{{$category->name}}" class="form-control">
+                    <input type="text" name="name" class="form-control">
                 </div>
                 <div class="col-md-6">
                     <label for="">Slug</label>
-                    <input type="text" name="slug" value="{{$category->slug}}"  class="form-control">
+                    <input type="text" name="slug" class="form-control">
                 </div>
             </div>
             <div class="row mt-4 mb-4">
                 <div class="col-md-6">
                     <label for="">Description</label>
-                    <input type="text" name="description"  value="{{$category->description}}" class="form-control">
+                    <input type="text" name="description" class="form-control">
                 </div>
                 <div class="col-md-6">
-                    <label for="">Image</label>
-                    <input type="file" name="image" class="form-control">
+                    <label for="">YT Iframe</label>
+                    <input type="text" name="yt_iframe" class="form-control">
                 </div>
             </div>
             <h6>SEO Tags</h6>
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <label for="">Meta Title</label>
-                    <input type="text" name="meta_title"  value="{{$category->meta_title}}" class="form-control">
+                    <input type="text" name="meta_title" class="form-control">
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="">Meta Description</label>
-                    <input type="text" name="meta_description" value="{{$category->meta_description}}" class="form-control">
+                    <input type="text" name="meta_description" class="form-control">
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="">Meta Keywords</label>
-                    <input type="text" name="meta_keyword" value="{{$category->meta_keyword}}" class="form-control">
+                    <input type="text" name="meta_keyword" class="form-control">
                 </div>
             </div>
           
             <h6>Status Mode</h6>
             <div class="row">
                 <div class="col-md-3 mb-3">
-                    <label for="">Navbar Status</label>
-                    <input type="checkbox" name="navbar_status" {{$category->navbar_status=='1' ?'checked':''}}/>
-                </div>
-                <div class="col-md-3 mb-3">
                     <label for="">Status</label>
-                    <input type="checkbox" name="status"  {{$category->status=='1' ?'checked':''}}/>
-                </div>
+                    <input type="checkbox" name="status" >
                 </div>
                 <div class="col-md-6 align-right">
                     <button type="submit" class="btn btn-primary">Save</button>
@@ -89,5 +82,7 @@
         </form>
     </div>
 </div>
+            
+                   
 
 @endsection

@@ -32,4 +32,12 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
     Route::get('/edit_category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'edit']);
     Route::put('/update_category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'update']);
     Route::get('/delete_category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
+
+    Route::get('/posts', [App\Http\Controllers\Admin\Postcontroller::class, 'index']);
+    Route::get('/add_posts', [App\Http\Controllers\Admin\Postcontroller::class, 'create']);
+    Route::post('/add_posts', [App\Http\Controllers\Admin\Postcontroller::class, 'store']);
+    Route::get('/edit_posts/{post_id}', [App\Http\Controllers\Admin\Postcontroller::class, 'edit']);
+    Route::put('/update_posts/{post_id}', [App\Http\Controllers\Admin\Postcontroller::class, 'update']);
+    Route::get('/delete_posts/{post_id}', [App\Http\Controllers\Admin\Postcontroller::class, 'destroy']);
+
 });
