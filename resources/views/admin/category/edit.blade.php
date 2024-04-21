@@ -22,18 +22,8 @@
                 </div>
         @endif
         <form action="{{url('admin/update_category/'.$category->id)}}" method="POST" enctype="multipart/form-data">
-            @csrf
+        @csrf
             @method('PUT')
-            <div class="row mt-4 mb-4">
-                <div class="col-md-6">
-                    <label for="category_id">Select Category</label>
-                    <select name="category_id" class="form-control">
-                            <option value="">Please select Category</option>
-                        @foreach($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
             <div class="row mt-4 mb-4">
                 <div class="col-md-6">
                     <label for="">Post Name</label>
@@ -47,7 +37,8 @@
             <div class="row mt-4 mb-4">
                 <div class="col-md-6">
                     <label for="">Description</label>
-                    <input type="text" name="description"  value="{{$category->description}}" class="form-control">
+                    <textarea name="description" class="form-control" id="mysummernote"  rows="4">{{!! $category->description !!}}</textarea>
+                   
                 </div>
                 <div class="col-md-6">
                     <label for="">Image</label>

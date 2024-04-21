@@ -45,7 +45,8 @@
             <div class="row mt-4 mb-4">
                 <div class="col-md-6">
                     <label for="">Description</label>
-                    <input type="text" name="description" class="form-control">
+                    <!-- <input type="text" id="mysummernote" name="description" class="form-control"> -->
+                    <textarea name="description" class="form-control" id="mysummernote"  rows="4"></textarea>
                 </div>
                 <div class="col-md-6">
                     <label for="">YT Iframe</label>
