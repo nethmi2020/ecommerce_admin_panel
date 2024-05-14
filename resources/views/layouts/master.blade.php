@@ -20,6 +20,7 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     
+    <link rel="stylesheet" href="//cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
 </head>
 <body id="page-top">
 <!-- -->
@@ -51,12 +52,18 @@
     <script src="{{asset('assets/js/sb-admin-2.min.js')}}"></script>
     <!-- summernote js link -->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-    <script>
+   <script src="//cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+   <script>
     $(document).ready(function() {
         $("#mysummernote").summernote({
             height: 150,
         });
         $('.dropdown-toggle').dropdown();
+    });
+
+    let table = new DataTable('#myTable');
+    $(document).ready(function() {
+        $('#myDataTable').DataTable();
     });
 </script>
 </body>
